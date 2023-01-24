@@ -46,6 +46,7 @@ class Client {
     const req = superagent.post(url.format(target)).send(data.body)
 
     delete data.body
+    delete data.host
 
     Object.keys(data).forEach(key => {
       req.set(key, data[key])
